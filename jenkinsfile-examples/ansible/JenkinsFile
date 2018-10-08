@@ -5,9 +5,8 @@ pipeline {
             agent { label 'docker' }
             steps {
                 checkout scm
-                sh 'find ./ -type f'
-                sh 'apt-cache policy'
-                sh 'apt-get -y install libssl-dev'
+                sh 'sudo apt-cache policy'
+                sh 'sudo apt-get -y install libssl-dev'
                 sh 'pip install -r ./jenkinsfile-examples/ansible/ansible25.requirements'
                 sh 'ansible -version'
             }
