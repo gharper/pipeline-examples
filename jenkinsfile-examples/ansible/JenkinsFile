@@ -6,7 +6,8 @@ pipeline {
             steps {
                 checkout scm
                 sh 'find ./ -type f'
-                sh 'apt-get install libssl-dev'
+                sh 'apt-cache policy'
+                sh 'apt-get -y install libssl-dev'
                 sh 'pip install -r ./jenkinsfile-examples/ansible/ansible25.requirements'
                 sh 'ansible -version'
             }
