@@ -8,11 +8,12 @@ pipeline {
                 script {
                     sh 'sudo apt-get update'
                     sh 'sudo apt-get -y install libssl-dev'
+                    sh 'sudo apt-get -y remove python-pip python-pip-whl python-pkg-resources python-setuptools python-wheel'
                     sh 'which -a python | xargs -I {} sh -c "ls -1 {} && {} --version"'
                     sh 'which -a pip | xargs -I {} sh -c "ls -1 {} && {} --version"'
-                    sh '/usr/local/bin/pip install -U pip setuptools wheel'
-                    sh '/usr/local/bin/pip install -Uv m2crypto'
-                    sh '/usr/local/bin/pip install -r ./jenkinsfile-examples/ansible/ansible25.requirements'
+                    sh 'pip install -U pip setuptools wheel'
+                    sh 'pip install -Uv m2crypto'
+                    sh 'pip install -r ./jenkinsfile-examples/ansible/ansible25.requirements'
                     // sh 'pip install ansible==2.5.2'
                     sh 'ansible --version'
                 }
