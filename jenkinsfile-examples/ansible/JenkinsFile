@@ -8,10 +8,9 @@ pipeline {
                 script {
                     sh 'sudo apt-get update'
                     sh 'sudo apt-get -y install libssl-dev'
-                    sh 'sudo /usr/local/bin/pip install -U pip setuptools wheel'
-                    sh 'sudo /usr/local/bin/pip install -Uv m2crypto'
-                    sh 'sudo /usr/local/bin/pip install -Uv m2crypto'
-                    sh 'sudo /usr/local/bin/pip install -r ./jenkinsfile-examples/ansible/ansible25.requirements'
+                    sh '/usr/local/bin/pip install -U pip setuptools wheel'
+                    sh '/usr/local/bin/pip install -Uv m2crypto || /usr/local/bin/pip install -Uv m2crypto'
+                    sh '/usr/local/bin/pip install -r ./jenkinsfile-examples/ansible/ansible25.requirements'
                     // sh 'pip install ansible==2.5.2'
                     sh 'ansible --version'
                 }
