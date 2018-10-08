@@ -7,8 +7,8 @@ pipeline {
                 checkout scm
                 script {
                     sh 'sudo apt-get update'
-                    sh 'DEBIAN_FRONTEND="noninteractive" sudo apt-get -q install -y -o Dpkg::Options::="--force-confnew"  --no-install-recommends python-dev'
-                    sh 'pip install -r ./jenkinsfile-examples/ansible/ansible25.requirements'
+                    sh 'python --version'
+                    sh 'pip install ansible==2.5.2'
                     sh 'ansible -version'
                 }
             }
