@@ -7,9 +7,9 @@ pipeline {
                 checkout scm
                 script {
                     sh 'sudo apt-get update'
-                    sh 'sudo apt-get -y install python-m2crypto python-openssl'
+                    // sh 'sudo apt-get -y install python-m2crypto python-openssl'
                     sh 'python --version'
-                    sh 'pip install -U pip cryptography'
+                    sh 'sudo pip install -U pip cryptography requests'
                     sh 'sudo pip install -r ./jenkinsfile-examples/ansible/ansible25.requirements'
                     // sh 'pip install ansible==2.5.2'
                     sh 'ansible --version'
