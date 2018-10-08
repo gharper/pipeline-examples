@@ -9,7 +9,7 @@ pipeline {
                     sh 'sudo apt-get update'
                     // sh 'sudo apt-get -y install python-m2crypto python-openssl'
                     sh 'python --version'
-                    sh 'sudo pip install -U pip'
+                    sh 'sudo pip install -U pip setuptools'
                     sh 'sudo pip install -Uv m2crypto'
                     sh 'sudo pip install -r ./jenkinsfile-examples/ansible/ansible25.requirements'
                     // sh 'pip install ansible==2.5.2'
