@@ -1,7 +1,7 @@
 pipeline {
     agent none
     stages {
-        stage('Staging'{
+        stage('Staging'){
             agent { label 'docker' }
             steps {
                 checkout scm
